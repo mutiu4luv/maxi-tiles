@@ -1,0 +1,28 @@
+<!-- <mat-toolbar color="primary">
+  <button mat-button>Maxi Tiles</button>
+  <span class="example-spacer"></span>
+  <li class="burger" (click)="toggleNavbar()">
+    <i class="material-icons">{{ navbarOpen ? "close" : "menu" }}</i>
+  </li>
+  <div class="menu" [class.is-open]="navbarOpen">
+    <button mat-button>Home</button>
+    <button mat-button>About</button>
+    <button mat-button>Contact Us</button>
+  </div>
+</mat-toolbar> -->
+
+<nav id="my-first">
+  <ul>
+    <li class="logotype">
+      <a href="#">Maxi Tiles</a>
+    </li>
+    <li class="burger" (click)="toggleNavbar()">
+      <i class="material-icons">{{ navbarOpen ? "close" : "menu" }}</i>
+    </li>
+    <li class="menu" [class.is-open]="navbarOpen">
+      <a href="#" class="menu-item">Home</a>
+      <a href="#" class="menu-item">About</a>
+      <a href="#" class="menu-item">Contact</a>
+    </li>
+  </ul>
+</nav>
