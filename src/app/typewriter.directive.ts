@@ -1,28 +1,66 @@
-import { Directive, ElementRef, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, AfterViewInit } from '@angular/core';
 
 @Directive({
   selector: '[appTypewriter]',
 })
-export class TypewriterDirective implements AfterViewInit {
+export class TypewriterDirective implements AfterViewInit, OnDestroy {
+  private intervalId: any;
+  private originalText: string = '';
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
-    const text = this.el.nativeElement.textContent;
+    this.originalText = this.el.nativeElement.textContent;
     this.el.nativeElement.textContent = '';
 
-    this.typeText(text);
+    this.startTyping();
   }
 
-  typeText(text: string) {
+  startTyping() {
     let index = 0;
 
-    const typingInterval = setInterval(() => {
-      if (index < text.length) {
-        this.el.nativeElement.textContent += text[index];
+    this.intervalId = setInterval(() => {
+      if (index < this.originalText.length) {
+        this.el.nativeElement.textContent += this.originalText[index];
         index++;
       } else {
-        clearInterval(typingInterval);
+        this.el.nativeElement.textContent = '';
+        index = 0;
       }
     }, 100); // Adjust the typing speed as needed
   }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
 }
+
+///   if you want the typewriter to write once and stop
+
+// import { Directive, ElementRef, AfterViewInit } from '@angular/core';
+
+// @Directive({
+//   selector: '[appTypewriter]',
+// })
+// export class TypewriterDirective implements AfterViewInit {
+//   constructor(private el: ElementRef) {}
+
+//   ngAfterViewInit(): void {
+//     const text = this.el.nativeElement.textContent;
+//     this.el.nativeElement.textContent = '';
+
+//     this.typeText(text);
+//   }
+
+//   typeText(text: string) {
+//     let index = 0;
+
+//     const typingInterval = setInterval(() => {
+//       if (index < text.length) {
+//         this.el.nativeElement.textContent += text[index];
+//         index++;
+//       } else {
+//         clearInterval(typingInterval);
+//       }
+//     }, 100); // Adjust the typing speed as needed
+//   }
+// }
