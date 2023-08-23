@@ -12,9 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { HeroComponent } from './component/hero/hero.component';
 import { FirstComponent } from './component/first/first.component';
 import { SecondComponent } from './component/second/second.component';
+import { TypewriterDirective } from './typewriter.directive';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomepageComponent, HeroComponent, FirstComponent, SecondComponent],
+  declarations: [AppComponent, NavbarComponent, HomepageComponent, HeroComponent, FirstComponent, SecondComponent, TypewriterDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
