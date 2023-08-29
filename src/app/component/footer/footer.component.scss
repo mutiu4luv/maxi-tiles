@@ -201,10 +201,16 @@ footer {
     margin-bottom: 5px;
 }
 
+
 /* Here is the code for Responsive Footer */
 /* You can remove below code if you don't want Footer to be responsive */
 
-
+footer {
+    img{
+        height: 60px;
+        width: 30px;
+    }
+}
 @media (max-width: 880px) {
 
     .footer-distributed .footer-left,

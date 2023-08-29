@@ -24,8 +24,8 @@ export class HomepageComponent {
     },
     {
       quote: "i'm impressed with your sevice",
-      author: 'Oluchi Madu',
-      imageUrl: 'assets/oluchi.jpg',
+      author: 'Genevieve Osuoha',
+      imageUrl: 'assets/gene.jpeg',
     },
     // Add more testimonials here
   ];
