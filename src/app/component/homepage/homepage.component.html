@@ -2,3 +2,11 @@
 <app-hero></app-hero>
 <app-first></app-first>
 <app-second></app-second>
+<div class="testimonials-container">
+  <app-testimonies
+    *ngFor="let testimonial of testimonials"
+    [testimonial]="testimonial"
+  >
+  </app-testimonies>
+</div>
+<app-footer></app-footer>

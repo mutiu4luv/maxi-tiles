@@ -13,9 +13,22 @@ import { HeroComponent } from './component/hero/hero.component';
 import { FirstComponent } from './component/first/first.component';
 import { SecondComponent } from './component/second/second.component';
 import { TypewriterDirective } from './typewriter.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TestimoniesComponent } from './component/testimonies/testimonies.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomepageComponent, HeroComponent, FirstComponent, SecondComponent, TypewriterDirective],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomepageComponent,
+    HeroComponent,
+    FirstComponent,
+    SecondComponent,
+    TypewriterDirective,
+    TestimoniesComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +37,7 @@ import { TypewriterDirective } from './typewriter.directive';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
